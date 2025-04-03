@@ -1,0 +1,17 @@
+create table BookDetailsOne(BookAuthor char(45),BookName char(50),BookType char(20),BookPages int(4),BookPrice double(6,2),BookID int(4));
+desc BookDetailsOne;
+insert into BookDetailsOne(BookAuthor,BookName,BookType,BookPages,BookPrice,BookID)
+values("ajay","GOT","fantacy",500,234.56,101),("sai","Kingfisher","action",672,345.63,102);
+select * from BookDetailsOne;
+insert into BookDetailsOne(BookAuthor,BookName,BookType,BookPages,BookPrice,BookID)
+values("Rbond","Time stops at shamli","Story",56,18.90,1786),("ypk","C Fundamental","Technical",56,555.55,1216),("Pallhavi Joshi","No time","Fiction",56,109.90,4321);
+commit;
+insert into BookDetailsOne(BookAuthor,BookName,BookType,BookPages,BookPrice,BookID)
+values("ypk","C++ Fundamental","Technical",56,276.00,1111),("Pallhavi Joshi","Out of box","Fiction",56,78.21,3434),("ypk","C Fundamental","Non Fiction",56,55.89,1412);
+select BookAuthor,BookName from BookDetailsOne where BookType='story';
+select BookName from BookDetailsOne where BookPrice<109;
+select count(*) from BookDetailsOne where BookAuthor='ypk';
+select * from BookDetailsOne where BookID != 102;
+select BookName from BookDetailsOne where BookPrice between 55.89 and 276;
+select * from BookDetailsOne where BookID not in (101,102);
+select * from BookDetailsOne where BookType in ("Technical"); 
